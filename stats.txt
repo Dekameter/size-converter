@@ -1,0 +1,12 @@
+Average male height (US): 5'10" or 177.8 cm
+Average female height (US): 5'4" or 162.56 cm
+
+Average male weight (US): 194.7 lb or 88.3 kg
+Average female weight (US): 164.7 lb or 74.7 kg
+
+Average energy output: 60 W
+Average energy output (Idle): 50 W
+Average energy output (Work): 75 W
+
+Average daily calorie intake: 2000 kcal
+Average daily calorie intake (Work): 2600 kcal

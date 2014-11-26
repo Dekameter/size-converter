@@ -1,0 +1,26 @@
+v0.2.1 (November 24, 2014)
+<br />-----------------------------------------------------
+<br />*Set footstep magnitude to be more dependent on weight.
+<br />
+<br />v0.2.0 (November 24, 2014)
+<br />-----------------------------------------------------
+<br />+Added in earthquake magnitude from footsteps.
+<br />+Added in setup for more ticker interfaces.
+<br />
+<br />v0.1.2 (November 24, 2014)
+<br />-----------------------------------------------------
+<br />+Added in the rest of the mass units to Daily Food Intake
+<br />*Switched "Food Intake" to "Daily Food Intake" to be more clear
+<br />
+<br />v0.1.1 (November 24, 2014)
+<br />-----------------------------------------------------
+<br />+Added "Suns" unit to Energy Output
+<br />+Added "Humans" unit to Heights
+<br />+Added "Pounds" & "Kilograms" units to Food Intake
+<br />+Added onscreen changelog
+<br />*Fixed spacing between labels and fields.
+<br />
+<br />v0.1 (November 24, 2014)
+<br />----------------------------------------------------
+<br />+Initial release
+<br />+Includes New Weight, Energy Output, and Food Intake

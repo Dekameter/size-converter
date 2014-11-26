@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2014 DekaShichi -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Size Converter</title>
+		<link rel="stylesheet" type="text/css" href="size-converter.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="size-converter.js"></script>
+	</head>
+	
+	<body>
+		<div id="header">
+			<a id="top"></a>
+			<!--<div id="nav-bar">
+				<nav id="menu">
+					<span class="nav"><a href="">Temp1</a></span>
+					<span class="nav"><a href="">Temp2</a></span>
+				</nav>
+			</div>-->
+		</div>
+
+		<div id="main">
+			<h2>Size Converter</h2>
+			<p>v0.2.1 Pre-Alpha - Copyright (c) 2014 DekaShichi
+			<p>(This is currently very deep in development! This may and will not resemble the final page.)</p>
+			<form>
+				<!--<fieldset>
+					<label>LabelTest</label><input id="text" type="text" />
+					<button onclick="updateTicker()">Click Here to Change Ticker</button>
+				</fieldset>-->
+
+				<fieldset>
+					<label for="txtOldHeight">Original Height:</label> <input type="text" id="txtOldHeight" value="5.833" />
+					<select id="selOldHeight" onchange="convertOldHeightUnit()"></select>
+
+					<label for="txtOldWeight">Original Weight:</label> <input type="text" id="txtOldWeight" value="195" />
+					<select id="selOldWeight" onchange="convertOldWeightUnit()"></select>
+
+					<br /><label for="txtNewHeight">New Height:</label> <input type="text" id="txtNewHeight" value="5.833" />
+					<select id="selNewHeight" onchange="convertNewHeightUnit()"></select>
+
+					<br /><button type="button" onclick="convert()">Convert</button> <!--<button type="reset">Reset</button>-->
+				</fieldset>
+
+				<fieldset>
+					<label for="txtNewWeight">New Weight:</label> <input type="text" id="txtNewWeight" value="195" disabled />
+					<select id="selNewWeight" onchange="convertNewWeightUnit()"></select>
+					<hr />
+					<p>
+						* Mass-energy equivalences for food intake are calculated based on E = mc^2, m = mass (in kg), c = speed of light (in m/s)
+						and on the arbitrary princple of 20 kcal / g (based on 37 kcal / g for fat, and 17 kcal / g for protein)
+					</p>
+					<label for="txtEnergyOut">Energy Output:</label> <input type="text" id="txtEnergyOut" value="60" disabled />
+					<select id="selEnergyOut" onchange="convertEnergyOutUnit()"></select>
+					<label for="txtFoodIntake">Daily Food Intake:</label> <input type="text" id="txtFoodIntake" value="2000" disabled />
+					<select id="selFoodIntake" onchange="convertFoodIntakeUnit()"></select>
+					<br/><label for="txtMomentMag">Footstep Magnitude Earthquake:</label> <input type="text" id="txtMomentMag" value="-2.5" disabled />
+				</fieldset>
+			</form>
+
+			<!--<div id="ads">Ad Space</div>-->
+
+			<div id="changelog"></div>
+		</div>
+
+		<div id="footer">
+			<div id="ticker"><span id="news">Ticker - This is some test text. Hover to pause (currently not working in Chrome).</span></div><button id="nextTicker" type="button" onclick="updateTicker()"></button>
+		</div>
+
+		<script>
+			var set = 0;
+			var originalText = document.getElementById("news").innerHTML;
+			function updateTicker() {
+				var text = "Hai!";
+				if (set == 0) {
+					if (text == "") {
+						document.getElementById("news").innerHTML = "&nbsp;";
+					}
+					else {
+						document.getElementById("news").innerHTML = text;
+					}
+					set = 1;
+				}
+				else {
+					document.getElementById("news").innerHTML = window.originalText;
+					set = 0;
+				}
+			}
+
+			$(document).ready(function() {
+				init();
+			});
+		</script>
+	</body>
+</html>
