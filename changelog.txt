@@ -1,4 +1,10 @@
-v0.2.1 (November 24, 2014)
+v0.2.2 (November 26, 2014)
+<br />-----------------------------------------------------
+<br />+Added a show/hide changelog toggle.
+<br />*Reorganized and restructured the backend to be more maintainable & scalable.
+<br />*Moved the changelog up to the top.
+<br />
+<br >v0.2.1 (November 24, 2014)
 <br />-----------------------------------------------------
 <br />*Set footstep magnitude to be more dependent on weight.
 <br />

@@ -6,11 +6,22 @@ body {
 	color: white;
 }
 
-a {
+/*a {
 	color: #FFF;
 	font-weight: bold;
 	display: block;
 	text-decoration: none;
+}*/
+
+a {
+	font-weight: bold;
+	color: #406E94;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#changelogContainer {
+	border: dashed;
 }
 
 #nav-bar {
@@ -51,10 +62,10 @@ a {
 /*.nav-bar:hover {
 	width: 200px;
 }*/
-#nextTicker {
-	border-top: 8px ridge #A4A4A4;
-    border-left: 12px ridge #A4A4A4;
-    border-bottom: 8px groove #A4A4A4;
+#btnTicker {
+	border-top: 8px groove #A4A4A4;
+    border-left: 12px groove #A4A4A4;
+    border-bottom: 8px ridge #A4A4A4;
     outline: #707070;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;

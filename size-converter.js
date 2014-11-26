@@ -151,15 +151,89 @@ var person = {
 	foodIntake:"8.368e+6"
 };
 
+var comparePerson = {
+	height:"1.778",
+	weight:"88.3",
+	volume:"",
+	energyOutput:"60",
+	foodIntake:"8.368e+6"
+}
+
 var EARTH_CRUST_SHEAR_MODULUS = 32e+9; // In Pascals
 var EARTH_MANTLE_SHEAR_MODULUS = 75e+9; // In Pascals
 var EARTH_GRAVITY_ACCELERATION = 9.80665; // In m / s
 
+$(document).ready(function() {
+	setFields();
+	setEvents();
+	$("#changelog").hide().load("changelog.txt");
+	$("#btnChangelog").click(function() { $("#changelog").toggle(); });
+	$("#changelog").click(function() { $(this).toggle(); });
+});
+
+function field(textFieldId, selectorId, units, defaultIndex)
+{
+	this.textField = document.getElementById(textFieldId);
+	this.selector = document.getElementById(selectorId);
+	this.units = units;
+	this.defaultIndex = defaultIndex;
+	if(this.selector != null)
+	{
+		for(i = 0; i < this.units.length; i++)
+		{
+			var option = document.createElement("option");
+			option.text = this.units[i].name;
+			option.value = this.units[i].value;
+			this.selector.add(option);
+		}
+		this.selector.options[defaultIndex].selected = true;
+		this.prevUnit = this.selector.value;
+	}
+	else
+	{
+		this.prevUnit = "0";
+	}
+}
+
+function setFields()
+{
+	// Defaults to "Feet"
+	oldHeightField = new field("txtOldHeight","selOldHeight",heightUnits,1);
+	newHeightField = new field("txtNewHeight","selNewHeight",heightUnits,1);
+
+	// Defaults to "Pounds"
+	oldWeightField = new field("txtOldWeight","selOldWeight",weightUnits,3);
+	newWeightField = new field("txtNewWeight","selNewWeight",weightUnits,3);
+
+	// Defaults to "Watts"
+	energyOutField = new field("txtEnergyOut","selEnergyOut",powerUnits,4);
+	// Defaults to "Food (Kilo)Calories"
+	foodIntakeField = new field("txtFoodIntake","selFoodIntake",energyUnits,15);
+	//footStepMagField = new field("txtMomentMag",null,null,null);
+}
+
+function setEvents()
+{
+	$(oldHeightField.selector).change(function() { convertField(oldHeightField,this.value); });
+	$(oldWeightField.selector).change(function() { convertField(oldWeightField,this.value); });
+
+	$(newHeightField.selector).change(function() { convertField(newHeightField,this.value); });
+	$(newWeightField.selector).change(function() { convertField(newWeightField,this.value); });
+
+	$(energyOutField.selector).change(function() { convertField(energyOutField,this.value); });
+	$(foodIntakeField.selector).change(function() {
+		var unit = getFoodUnit(this);
+		convertField(foodIntakeField,unit);
+	});
+
+	$("#btnConvert").click(function() { convert(); });
+}
+
 function convert()
 {
-	var oldHeight = document.getElementById("txtOldHeight").value * document.getElementById("selOldHeight").value;
-	var oldWeight = document.getElementById("txtOldWeight").value * document.getElementById("selOldWeight").value;
-	var newHeight = document.getElementById("txtNewHeight").value * document.getElementById("selNewHeight").value;
+	var oldHeight = oldHeightField.textField.value * oldHeightField.selector.value;
+	var oldWeight = oldWeightField.textField.value * oldWeightField.selector.value;
+	var newHeight = newHeightField.textField.value * newHeightField.selector.value;
 	// Weight/mass increases 3-dimensionally. E.g. a person twice their size
 	// increases their weight/mass by a factor of 8.
 	var newWeight = cubicConvert(oldHeight,newHeight,oldWeight);
@@ -178,131 +252,14 @@ function convert()
 	// Returns a dimensionless number.
 	var momentMagnitude = ((2 / 3) * (Math.log(seismicMoment) / Math.LN10)) - 6;
 
-	document.getElementById("selNewWeight").selectedIndex = document.getElementById("selOldWeight").selectedIndex;
-	document.getElementById("txtNewWeight").value = newWeight / document.getElementById("selNewWeight").value;
+	newWeightField.selector.selectedIndex = newWeightField.selector.selectedIndex;
+	newWeightField.textField.value = newWeight / newWeightField.selector.value;
 
-	document.getElementById("txtEnergyOut").value = energyOutput / document.getElementById("selEnergyOut").value;
-	var foodUnit = getFoodUnit();
-	document.getElementById("txtFoodIntake").value = foodIntake / foodUnit;
+	energyOutField.textField.value = energyOutput / energyOutField.selector.value;
+	var foodUnit = getFoodUnit(foodIntakeField.selector);
+	foodIntakeField.textField.value = foodIntake / foodUnit;
 
 	document.getElementById("txtMomentMag").value = momentMagnitude;
-}
-
-function init()
-{
-	drawUnits();
-	setDefaultUnits();
-	$("#changelog").load("changelog.txt");
-}
-
-function setDefaultUnits()
-{
-	prevOldHeight = document.getElementById("selOldHeight").value;
-	prevOldWeight = document.getElementById("selOldWeight").value;
-
-	prevNewHeight = document.getElementById("selNewHeight").value;
-	prevNewWeight = document.getElementById("selNewWeight").value;
-
-	prevEnergyOut = document.getElementById("selEnergyOut").value;
-	prevFoodIntake = document.getElementById("selFoodIntake").value;
-}
-
-function drawUnits()
-{
-	// Separated due to some odd JavaScript idiosyncrasies in using the same
-	// option object.
-	for(i = 0; i < heightUnits.length; i++)
-	{
-		var option = document.createElement("option");
-		option.text = heightUnits[i].name;
-		option.value = heightUnits[i].value;
-		document.getElementById("selOldHeight").add(option);
-	}
-	// Set default to "Feet"
-	document.getElementById("selOldHeight").options[1].selected = true;
-
-	for(i = 0; i < heightUnits.length; i++)
-	{
-		var option = document.createElement("option");
-		option.text = heightUnits[i].name;
-		option.value = heightUnits[i].value;
-		document.getElementById("selNewHeight").add(option);
-	}
-	// Set default to "Feet"
-	document.getElementById("selNewHeight").options[1].selected = true;
-
-
-
-	for(i = 0; i < weightUnits.length; i++)
-	{
-		var option = document.createElement("option");
-		option.text = weightUnits[i].name;
-		option.value = weightUnits[i].value;
-		document.getElementById("selOldWeight").add(option);
-	}
-	// Set default to "Pounds"
-	document.getElementById("selOldWeight").options[3].selected = true;
-
-	for(i = 0; i < weightUnits.length; i++)
-	{
-		var option = document.createElement("option");
-		option.text = weightUnits[i].name;
-		option.value = weightUnits[i].value;
-		document.getElementById("selNewWeight").add(option);
-	}
-	// Set default to "Pounds"
-	document.getElementById("selNewWeight").options[3].selected = true;
-
-
-
-	for(i = 0; i < powerUnits.length; i++)
-	{
-		var option = document.createElement("option");
-		option.text = powerUnits[i].name;
-		option.value = powerUnits[i].value;
-		document.getElementById("selEnergyOut").add(option);
-	}
-	// Set default to "Watts"
-	document.getElementById("selEnergyOut").options[4].selected = true;
-
-	for(i = 0; i < energyUnits.length; i++)
-	{
-		var option = document.createElement("option");
-		option.text = energyUnits[i].name;
-		option.value = energyUnits[i].value;
-		document.getElementById("selFoodIntake").add(option);
-	}
-	// Set default to "Pounds"
-	document.getElementById("selFoodIntake").options[15].selected = true;
-}
-
-function convertUnit(oldUnit, newUnit)
-{
-	return (oldUnit / newUnit)
-}
-
-function getFoodUnit()
-{
-	var foodUnit = document.getElementById("selFoodIntake").value;
-	var index = document.getElementById("selFoodIntake").selectedIndex;
-	// If the selected food intake is one of the mass-equivalencies, convert
-	// based on 'efficiency'.
-	// And if electronvolts is not selected (an energy unit in itself).
-	if(index >= 23 && index != 35)
-	{
-		/* First, convert from kilograms to grams.
-		Then multiply by 20 kcal (an arbitrary conversion of 20 kcal / g,
-		based on 37 kcal / g for fat, and 17 kcal / g for proteins.
-		Then convert into the standard Joules.
-		1 kg of food ~ 8.368e7 J of energy*/
-
-		// In this case, divide out the energy by c^2 to get the mass, then
-		// multiply by this constant divided by the default food intake.
-		foodUnit = document.getElementById("selFoodIntake").value / Math.pow(299792458,2);
-		foodUnit *= 8.368e7;
-	}
-
-	return foodUnit;
 }
 
 // Used for when comparing length, height, etc.
@@ -323,50 +280,38 @@ function cubicConvert(oldHeight, newHeight, oldValue)
 	return oldValue * Math.pow(newHeight / oldHeight,3);
 }
 
-function convertOldHeightUnit()
+function convertUnit(oldUnit, newUnit)
 {
-	var unit = document.getElementById("selOldHeight").value;
-	var value = convertUnit(prevOldHeight,unit);
-	document.getElementById("txtOldHeight").value = document.getElementById("txtOldHeight").value * value;
-	prevOldHeight = unit;
+	return (oldUnit / newUnit);
 }
 
-function convertOldWeightUnit()
+function getFoodUnit(selector)
 {
-	var unit = document.getElementById("selOldWeight").value;
-	var value = convertUnit(prevOldWeight,unit);
-	document.getElementById("txtOldWeight").value = document.getElementById("txtOldWeight").value * value;
-	prevOldWeight = unit;
+	var foodUnit = selector.value;
+	var index = selector.selectedIndex;
+	// If the selected food intake is one of the mass-equivalencies, convert
+	// based on 'efficiency'.
+	// And if electronvolts is not selected (an energy unit in itself).
+	if(index >= 23 && index != 35)
+	{
+		/* First, convert from kilograms to grams.
+		Then multiply by 20 kcal (an arbitrary conversion of 20 kcal / g,
+		based on 37 kcal / g for fat, and 17 kcal / g for proteins.
+		Then convert into the standard Joules.
+		1 kg of food ~ 8.368e7 J of energy*/
+
+		// In this case, divide out the energy by c^2 to get the mass, then
+		// multiply by this constant divided by the default food intake.
+		foodUnit = selector.value / Math.pow(299792458,2);
+		foodUnit *= 8.368e7;
+	}
+
+	return foodUnit;
 }
 
-function convertNewHeightUnit()
+function convertField(field, unit)
 {
-	var unit = document.getElementById("selNewHeight").value;
-	var value = convertUnit(prevNewHeight,unit);
-	document.getElementById("txtNewHeight").value = document.getElementById("txtNewHeight").value * value;
-	prevNewHeight = unit;
-}
-
-function convertNewWeightUnit()
-{
-	var unit = document.getElementById("selNewWeight").value;
-	var value = convertUnit(prevNewWeight,unit);
-	document.getElementById("txtNewWeight").value = document.getElementById("txtNewWeight").value * value;
-	prevNewWeight = unit;
-}
-
-function convertEnergyOutUnit()
-{
-	var unit = document.getElementById("selEnergyOut").value;
-	var value = convertUnit(prevEnergyOut,unit);
-	document.getElementById("txtEnergyOut").value = document.getElementById("txtEnergyOut").value * value;
-	prevEnergyOut = unit;
-}
-
-function convertFoodIntakeUnit()
-{
-	var unit = getFoodUnit();
-	var value = convertUnit(prevFoodIntake,unit);
-	document.getElementById("txtFoodIntake").value = document.getElementById("txtFoodIntake").value * value;
-	prevFoodIntake = unit;
+	var value = convertUnit(field.prevUnit,unit);
+	field.textField.value = field.textField.value * value;
+	field.prevUnit = unit;
 }
