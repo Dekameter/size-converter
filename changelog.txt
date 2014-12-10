@@ -1,5 +1,5 @@
 <li>
-	v0.2.4 (December 9, 2014)
+	v0.2.5 (December 9, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Advanced Options for original energy output &amp; food intake.</li>
@@ -10,7 +10,7 @@
 </li>
 
 <li>
-	v0.2.3 (December 7, 2014)
+	v0.2.4 (December 7, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Twitter Feed</li>
@@ -23,7 +23,7 @@
 </li>
 
 <li>
-	v0.2.2.1 (November 30, 2014)
+	v0.2.3 (November 30, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add"></ul>
 	<ul class="sub"></ul>
