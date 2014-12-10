@@ -31,7 +31,7 @@
 				<a id="btnChangelog">Changelog</a>
 				(This is currently very deep in development! This may and will not resemble the final page.)
 			</p>
-			<div id="changelogContainer"><div id="changelog"></div></div>
+			<div id="changelogContainer"><ol id="changelog"></ol></div>
 
 			<br /><form>
 				<!--<fieldset>
@@ -40,38 +40,43 @@
 				</fieldset>-->
 
 				<fieldset>
-					<label for="txtOldHeight">Original Height:</label> <input type="text" id="txtOldHeight" value="5.833" />
+					<label for="txtOldHeight">Original Height:</label> <input type="text" id="txtOldHeight" value="5.833" size="10" />
 					<select id="selOldHeight"></select>
 
-					<label for="txtOldWeight">Original Weight:</label> <input type="text" id="txtOldWeight" value="195" />
+					<label for="txtOldWeight">Original Weight:</label> <input type="text" id="txtOldWeight" value="195" size="10" />
 					<select id="selOldWeight"></select>
 
-					<br /><label for="txtNewHeight">New Height:</label> <input type="text" id="txtNewHeight" value="5.833" />
+					<br /><label for="txtNewHeight">New Height:</label> <input type="text" id="txtNewHeight" value="5.833" size="10" />
 					<select id="selNewHeight"></select>
 
 					<br /><button id="btnConvert" type="button">Convert</button> <!--<button type="reset">Reset</button>-->
 				</fieldset>
 
 				<fieldset>
-					<label for="txtNewWeight">New Weight:</label> <input type="text" id="txtNewWeight" value="195" disabled />
+					<label for="txtNewWeight">New Weight:</label> <input type="text" id="txtNewWeight" value="195" size="10" disabled />
 					<select id="selNewWeight"></select>
 					<hr />
 					<p>
 						* Mass-energy equivalences for food intake are calculated based on E = mc^2, m = mass (in kg), c = speed of light (in m/s)
 						and on the arbitrary princple of 20 kcal / g (based on 37 kcal / g for fat, and 17 kcal / g for protein)
 					</p>
-					<label for="txtEnergyOut">Energy Output:</label> <input type="text" id="txtEnergyOut" value="60" disabled />
+					<label for="txtEnergyOut">Energy Output:</label> <input type="text" id="txtEnergyOut" value="60" size="10" disabled />
 					<select id="selEnergyOut"></select>
-					<label for="txtFoodIntake">Daily Food Intake:</label> <input type="text" id="txtFoodIntake" value="2000" disabled />
+					<label for="txtFoodIntake">Daily Food Intake:</label> <input type="text" id="txtFoodIntake" value="2000" size="10" disabled />
 					<select id="selFoodIntake"></select>
-					<br/><label for="txtMomentMag">Footstep Magnitude Earthquake:</label> <input type="text" id="txtMomentMag" value="-2.5" disabled />
+					<br/><label for="txtMomentMag">Footstep Magnitude Earthquake:</label> <input type="text" id="txtMomentMag" value="-2.5" size="5" disabled />
 				</fieldset>
 			</form>
 		</div>
 
+		<div id="ads">
+			<a class="twitter-timeline" href="https://twitter.com/DekaShichi" data-widget-id="541874196733636608">Tweets by @DekaShichi</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+
 		<div id="footer">
 			<div id="ticker">
-				<span id="news">Ticker - This is some test text. Hover to pause (currently not working in Chrome).</span>
+				<span id="news">Ticker - This is some test text. Hover to pause.</span>
 			</div>
 			<button id="btnTicker" type="button" onclick="updateTicker()"></button>
 		</div>

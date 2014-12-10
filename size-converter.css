@@ -20,6 +20,54 @@ a {
 	cursor: pointer;
 }
 
+.add {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+.add li {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+.add li:before {
+	content: "+";
+	padding-right: 5px;
+}
+.change {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+.change li {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+.change li:before {
+	content: "*";
+	padding-right: 5px;
+}
+.sub {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+.sub li {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+.sub li:before {
+	content: "-";
+	padding-right: 5px;
+}
+
+#changelog {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+#changelog li {
+	display: block;
+}
 #changelogContainer {
 	border: dashed;
 }
@@ -42,8 +90,9 @@ a {
 	position: absolute;
 	top: 0px;
 	bottom: calc(9px + 3em);
-	left: 100px;
-	right: 200px;
+	left: 1em;
+	right: 300px;
+	padding-right: 1em;
 	z-index: 0;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -53,23 +102,21 @@ a {
 	top: 0px;
 	bottom: calc(6px + 3em);
 	right: 0px;
-	width: 200px;
+	width: 300px;
 	overflow-x: hidden;
 	overflow-y: auto;
-	background-color: #FFF;
-	color: #000;
 }
 /*.nav-bar:hover {
 	width: 200px;
 }*/
 #btnTicker {
 	border-top: 8px groove #A4A4A4;
-    border-left: 12px groove #A4A4A4;
-    border-bottom: 8px ridge #A4A4A4;
-    outline: #707070;
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
-    /*background-color: #A4A4A4;*/
+	border-left: 12px groove #A4A4A4;
+	border-bottom: 8px ridge #A4A4A4;
+	outline: #707070;
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+	/*background-color: #A4A4A4;*/
 	position: fixed;
 	z-index: 2;
 	bottom: 0px;
@@ -101,25 +148,25 @@ a {
 	animation: ticker 12s linear infinite;
 }
 #ticker:hover {
-	-webkit-animation-play-state: paused
-	-moz-animation-play-state: paused
-	-o-animation-play-state: paused
-	animation-play-state: paused
+	-webkit-animation-play-state: paused;
+	-moz-animation-play-state: paused;
+	-o-animation-play-state: paused;
+	animation-play-state: paused;
 }
 
 @-webkit-keyframes ticker {
-	0% { text-indent: 30em }
-	100% { text-indent: -32em }
+	0% { text-indent: 30em; }
+	100% { text-indent: -32em; }
 }
 @-moz-keyframes ticker {
-	0% { text-indent: 30em }
-	100% { text-indent: -32em }
+	0% { text-indent: 30em; }
+	100% { text-indent: -32em; }
 }
 @-o-keyframes ticker {
-	0% { text-indent: 30em }
-	100% { text-indent: -32em }
+	0% { text-indent: 30em; }
+	100% { text-indent: -32em; }
 }
 @keyframes ticker {
-	0% { text-indent: 30em }
-	100% { text-indent: -32em }
+	0% { text-indent: 30em; }
+	100% { text-indent: -32em; }
 }
