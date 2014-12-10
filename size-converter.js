@@ -206,8 +206,10 @@ function setFields()
 	newWeightField = new field("txtNewWeight","selNewWeight",weightUnits,3);
 
 	// Defaults to "Watts"
+	oldEnergyOutField = new field("txtOldEnergyOut","selOldEnergyOut",powerUnits,4);
 	energyOutField = new field("txtEnergyOut","selEnergyOut",powerUnits,4);
 	// Defaults to "Food (Kilo)Calories"
+	oldFoodIntakeField = new field("txtOldFoodIntake","selOldFoodIntake",energyUnits,15);
 	foodIntakeField = new field("txtFoodIntake","selFoodIntake",energyUnits,15);
 	//footStepMagField = new field("txtMomentMag",null,null,null);
 }
@@ -226,6 +228,9 @@ function setEvents()
 		convertField(foodIntakeField,unit);
 	});
 
+	$("#advOptions").hide();
+	$("#chkAdvOptions").click(function() { $("#advOptions").toggle(); });
+
 	$("#btnConvert").click(function() { convert(); });
 }
 
@@ -237,10 +242,19 @@ function convert()
 	// Weight/mass increases 3-dimensionally. E.g. a person twice their size
 	// increases their weight/mass by a factor of 8.
 	var newWeight = cubicConvert(oldHeight,newHeight,oldWeight);
+
+	var oldEnergyOutput = defaultPerson.energyOutput;
+	var oldFoodIntake = defaultPerson.foodIntake;
+	if(document.getElementById("chkAdvOptions").checked)
+	{
+		oldEnergyOutput = oldEnergyOutField.textField.value * oldEnergyOutField.selector.value;
+		oldFoodIntake = oldFoodIntakeField.textField.value * oldFoodIntakeField.selector.value;
+	}
+
 	var energyOutput = cubicConvert(defaultPerson.height, newHeight,
-		defaultPerson.energyOutput);
+		oldEnergyOutput);
 	var foodIntake = cubicConvert(defaultPerson.height, newHeight,
-		defaultPerson.foodIntake);
+		oldFoodIntake);
 	
 	// Basing this on gravitational potential energy, where a lifted foot when walking has potential energy.
 	var footHeight = linearConvert(oldHeight,newHeight,defaultPerson.walkHeight);

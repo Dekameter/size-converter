@@ -26,7 +26,7 @@
 
 		<div id="main">
 			<h2>Size Converter</h2>
-			<p>v0.2.1 Pre-Alpha - Copyright (c) 2014 DekaShichi</p>
+			<p>v0.2.4 Pre-Alpha - Copyright (c) 2014 DekaShichi</p>
 			<p>
 				<a id="btnChangelog">Changelog</a>
 				(This is currently very deep in development! This may and will not resemble the final page.)
@@ -40,14 +40,35 @@
 				</fieldset>-->
 
 				<fieldset>
-					<label for="txtOldHeight">Original Height:</label> <input type="text" id="txtOldHeight" value="5.833" size="10" />
+					<label for="txtOldHeight">Original Height:</label>
+					<input type="text" id="txtOldHeight" value="5.833"
+						size="10" />
 					<select id="selOldHeight"></select>
-
-					<label for="txtOldWeight">Original Weight:</label> <input type="text" id="txtOldWeight" value="195" size="10" />
+					<label for="txtOldWeight">Original Weight:</label>
+					<input type="text" id="txtOldWeight" value="195"
+						size="10" />
 					<select id="selOldWeight"></select>
 
-					<br /><label for="txtNewHeight">New Height:</label> <input type="text" id="txtNewHeight" value="5.833" size="10" />
+					<br /><label for="txtNewHeight">New Height:</label>
+					<input type="text" id="txtNewHeight" value="5.833"
+						size="10" />
 					<select id="selNewHeight"></select>
+
+					<br /><input id="chkAdvOptions" type="checkbox"
+						value="true">
+					<label for="chkAdvOptions">Advanced Options</label>
+					<div id="advOptions">
+						<label for="txtOldEnergyOut">Original Energy Output:
+						</label>
+						<input type="text" id="txtOldEnergyOut" value="60"
+							size="10" />
+						<select id="selOldEnergyOut"></select>
+						<label for="txtOldFoodIntake">Original Food Intake:
+						</label>
+						<input type="text" id="txtOldFoodIntake" value="2000"
+							size="10" />
+						<select id="selOldFoodIntake"></select>
+					</div>
 
 					<br /><button id="btnConvert" type="button">Convert</button> <!--<button type="reset">Reset</button>-->
 				</fieldset>
