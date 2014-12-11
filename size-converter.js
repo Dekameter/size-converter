@@ -234,7 +234,10 @@ function setEvents()
 	$("#advOptions").hide();
 	$("#chkAdvOptions").click(function() { $("#advOptions").toggle(); });
 
-	$("#btnConvert").click(function() { convert(); });
+	$("#btnConvert").click(function() {
+		convert();
+		updateTicker(getNextTicker(person));
+	});
 }
 
 function convert()
