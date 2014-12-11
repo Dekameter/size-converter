@@ -5,7 +5,7 @@ var heightUnits = [
 	// All units in meters
 	{name:"Miles",              value:"1.60934e+3"},
 	{name:"Feet",               value:"3.048e-1"},
-	{name:"Inches",             value:"0.0254e-2"},
+	{name:"Inches",             value:"2.54e-2"},
 
 	{name:"Kilometers",         value:"1e+3"},
 	{name:"Meters",             value:"1"},
