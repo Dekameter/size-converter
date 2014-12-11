@@ -247,7 +247,7 @@ function convert()
 	person.height = newHeightField.textField.value * newHeightField.selector.value;
 	// Weight/mass increases 3-dimensionally. E.g. a person twice their size
 	// increases their weight/mass by a factor of 8.
-	person.weight = cubicConvert(oldHeight,newHeight,oldWeight);
+	person.weight = cubicConvert(oldHeight,person.height,oldWeight);
 
 	var oldEnergyOutput = defaultPerson.energyOutput;
 	var oldFoodIntake = defaultPerson.foodIntake;
