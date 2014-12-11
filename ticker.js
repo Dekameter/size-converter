@@ -10,7 +10,7 @@ var lengthItems = [
 	{name:"baseball", plural:"baseballs",                     value:"7.45e-2"},
 	// Based on average wooden #2 pencil
 	{name:"pencil", plural:"pencils",                         value:"1.905e-1"},
-	{name:"13 lb bowling ball", plural:"13 lb bowling balls", value:"2.159e-1"},
+	{name:"13lb bowling ball", plural:"13lb bowling balls", value:"2.159e-1"},
 	{name:"human", plural:"humans",                           value:"1.778e0"},
 	{name:"Eiffel Tower", plural:"Eiffel Towers",             value:"3.01e+2"},
 	{name:"Burj Khalifa", plural:"Burj Khalifas",             value:"8.298e+2"},
