@@ -1,5 +1,5 @@
 // Copyright (c) 2014 DekaShichi
-// Size Converter v0.2.5
+// Size Converter v0.3
 
 var heightUnits = [
 	// All units in meters

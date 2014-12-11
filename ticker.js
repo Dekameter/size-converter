@@ -1,5 +1,5 @@
 // Copyright (c) 2014 DekaShichi
-// Ticker v0.2.5
+// Ticker v0.3
 
 var lengthItems = [
 	// All units in meters
