@@ -172,6 +172,7 @@ $(document).ready(function() {
 	$("#changelog").click(function() { $(this).toggle(); });
 	updateTicker(getNextTicker(person));
 	$("#btnTicker").click(function() { updateTicker(getNextTicker(person)); });
+	$("#ticker").click(function() { updateTicker(getNextTicker(person)); });
 });
 
 function field(textFieldId, selectorId, units, defaultIndex)
