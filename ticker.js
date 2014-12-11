@@ -15,11 +15,11 @@ var lengthItems = [
 	{name:"Eiffel Tower", plural:"Eiffel Towers",             value:"3.01e+2"},
 	{name:"Burj Khalifa", plural:"Burj Khalifas",             value:"8.298e+2"},
 	// Both in special-case prominence and from sea level
-	{name:"Mount Everest", plural:"Mount Everests",           value:"8.848e+e3"},
+	{name:"Mount Everest", plural:"Mount Everests",           value:"8.848e+3"},
 	// Prominence from sea floor
-	{name:"Mauna Kea", plural:"Mauna Keas",                   value:"1.01e+e4"},
+	{name:"Mauna Kea", plural:"Mauna Keas",                   value:"1.01e+4"},
 	// Prominence above Mars' datum
-	{name:"Olympus Mons", plural:"Olympus Monses",            value:"2.1229+e4"},
+	{name:"Olympus Mons", plural:"Olympus Monses",            value:"2.1229e+4"},
 	// Celestial bodies based on mean diameter
 	{name:"Moon", plural:"Moons",                             value:"3.4742e+6"},
 	{name:"Earth", plural:"Earths",                           value:"1.2742e+7"},
