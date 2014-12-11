@@ -18,12 +18,6 @@
 	<body>
 		<div id="header">
 			<a id="top"></a>
-			<!--<div id="nav-bar">
-				<nav id="menu">
-					<span class="nav"><a href="">Temp1</a></span>
-					<span class="nav"><a href="">Temp2</a></span>
-				</nav>
-			</div>-->
 		</div>
 
 		<div id="main">
@@ -36,11 +30,6 @@
 			<div id="changelogContainer"><ol id="changelog"></ol></div>
 
 			<br /><form>
-				<!--<fieldset>
-					<label>LabelTest</label><input id="text" type="text" />
-					<button onclick="updateTicker()">Click Here to Change Ticker</button>
-				</fieldset>-->
-
 				<fieldset>
 					<label for="txtOldHeight">Original Height:</label>
 					<input type="text" id="txtOldHeight" value="5.833"
@@ -103,26 +92,5 @@
 			</div>
 			<button id="btnTicker" type="button"></button>
 		</div>
-
-		<!--<script>
-			var set = 0;
-			var originalText = document.getElementById("news").innerHTML;
-			function updateTicker() {
-				var text = "Hai!";
-				if (set == 0) {
-					if (text == "") {
-						document.getElementById("news").innerHTML = "&nbsp;";
-					}
-					else {
-						document.getElementById("news").innerHTML = text;
-					}
-					set = 1;
-				}
-				else {
-					document.getElementById("news").innerHTML = window.originalText;
-					set = 0;
-				}
-			}
-		</script>-->
 	</body>
 </html>

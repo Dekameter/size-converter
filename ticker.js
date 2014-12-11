@@ -59,7 +59,6 @@ function updateTicker(tickerText) {
 		document.getElementById("news").innerHTML = tickerText;
 	}
 	$("#ticker").finish();
-	//document.getElementById("ticker").style.textIndent = "0";
 	document.getElementById("ticker").style.textIndent = ($("#ticker").width() - $("#btnTicker").width()) + "px"; 
 	$("#ticker").animate({textIndent:"-" + (tickerText.length / 2) + "em"},tickerText.length * 350,
 		"linear",function() { updateTicker(getNextTicker(person)); });
