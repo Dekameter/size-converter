@@ -1,4 +1,15 @@
 <li>
+	v0.3 (December 10, 2014)
+	<br />-----------------------------------------------------
+	<ul class="add">
+		<li>Added in ticker functionality!</li>
+	</ul>
+	<ul class="sub"></ul>
+	<ul class="change"></ul>
+	<br />
+</li>
+
+<li>
 	v0.2.5 (December 9, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
@@ -59,7 +70,7 @@
 </li>
 
 <li>
-	v0.2.0 (November 24, 2014)
+	v0.2 (November 24, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Added in earthquake magnitude from footsteps.</li>

@@ -11,6 +11,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
 		<script src="size-converter.js"></script>
+		<script src="ticker.js"></script>
 	</head>
 	
 	<body>
@@ -26,7 +27,7 @@
 
 		<div id="main">
 			<h2>Size Converter</h2>
-			<p>v0.2.5 Pre-Alpha - Copyright (c) 2014 DekaShichi</p>
+			<p>v0.3 Pre-Alpha - Copyright (c) 2014 DekaShichi</p>
 			<p>
 				<a id="btnChangelog">Changelog</a>
 				(This is currently very deep in development! This may and will not resemble the final page.)
@@ -97,12 +98,12 @@
 
 		<div id="footer">
 			<div id="ticker">
-				<span id="news">Ticker - This is some test text. Hover to pause.</span>
+				<span id="news">&nbsp;<span>
 			</div>
-			<button id="btnTicker" type="button" onclick="updateTicker()"></button>
+			<button id="btnTicker" type="button"></button>
 		</div>
 
-		<script>
+		<!--<script>
 			var set = 0;
 			var originalText = document.getElementById("news").innerHTML;
 			function updateTicker() {
@@ -121,6 +122,6 @@
 					set = 0;
 				}
 			}
-		</script>
+		</script>-->
 	</body>
 </html>

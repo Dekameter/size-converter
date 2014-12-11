@@ -1,4 +1,5 @@
 // Copyright (c) 2014 DekaShichi
+// Size Converter v0.2.5
 
 var heightUnits = [
 	// All units in meters
@@ -169,6 +170,8 @@ $(document).ready(function() {
 	$("#changelog").hide().load("changelog.txt");
 	$("#btnChangelog").click(function() { $("#changelog").toggle(); });
 	$("#changelog").click(function() { $(this).toggle(); });
+	updateTicker(getNextTicker(person));
+	$("#btnTicker").click(function() { updateTicker(getNextTicker(person)); });
 });
 
 function field(textFieldId, selectorId, units, defaultIndex)
@@ -238,10 +241,10 @@ function convert()
 {
 	var oldHeight = oldHeightField.textField.value * oldHeightField.selector.value;
 	var oldWeight = oldWeightField.textField.value * oldWeightField.selector.value;
-	var newHeight = newHeightField.textField.value * newHeightField.selector.value;
+	person.height = newHeightField.textField.value * newHeightField.selector.value;
 	// Weight/mass increases 3-dimensionally. E.g. a person twice their size
 	// increases their weight/mass by a factor of 8.
-	var newWeight = cubicConvert(oldHeight,newHeight,oldWeight);
+	person.weight = cubicConvert(oldHeight,newHeight,oldWeight);
 
 	var oldEnergyOutput = defaultPerson.energyOutput;
 	var oldFoodIntake = defaultPerson.foodIntake;
@@ -251,15 +254,15 @@ function convert()
 		oldFoodIntake = oldFoodIntakeField.textField.value * oldFoodIntakeField.selector.value;
 	}
 
-	var energyOutput = cubicConvert(defaultPerson.height, newHeight,
+	person.energyOutput = cubicConvert(defaultPerson.height, person.height,
 		oldEnergyOutput);
-	var foodIntake = cubicConvert(defaultPerson.height, newHeight,
+	person.foodIntake = cubicConvert(defaultPerson.height, person.height,
 		oldFoodIntake);
 	
 	// Basing this on gravitational potential energy, where a lifted foot when walking has potential energy.
-	var footHeight = linearConvert(oldHeight,newHeight,defaultPerson.walkHeight);
-	//var footMass = cubicConvert(oldHeight,newHeight,defaultPerson.footWeight);
-	var legMass = newWeight * defaultPerson.legWeightPercentage;
+	var footHeight = linearConvert(oldHeight,person.height,defaultPerson.walkHeight);
+	//var footMass = cubicConvert(oldHeight,person.height,defaultPerson.footWeight);
+	var legMass = person.weight * defaultPerson.legWeightPercentage;
 	var footStepEnergy = legMass * footHeight * 9.80665;
 	// Based on these equations http://www.ajdesigner.com/phpseismograph/earthquake_seismometer_equation_energy_moment.php
 	var seismicMoment = 20000 * footStepEnergy;
@@ -267,11 +270,11 @@ function convert()
 	var momentMagnitude = ((2 / 3) * (Math.log(seismicMoment) / Math.LN10)) - 6;
 
 	newWeightField.selector.selectedIndex = newWeightField.selector.selectedIndex;
-	newWeightField.textField.value = newWeight / newWeightField.selector.value;
+	newWeightField.textField.value = person.weight / newWeightField.selector.value;
 
-	energyOutField.textField.value = energyOutput / energyOutField.selector.value;
+	energyOutField.textField.value = person.energyOutput / energyOutField.selector.value;
 	var foodUnit = getFoodUnit(foodIntakeField.selector);
-	foodIntakeField.textField.value = foodIntake / foodUnit;
+	foodIntakeField.textField.value = person.foodIntake / foodUnit;
 
 	document.getElementById("txtMomentMag").value = momentMagnitude;
 }

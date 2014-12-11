@@ -142,7 +142,7 @@ a {
 	margin: 0 auto;
 	white-space: nowrap;
 	box-sizing: border-box;
-	-webkit-animation: ticker 12s linear infinite;
+	/*-webkit-animation: ticker 12s linear infinite;
 	-moz-animation: ticker 12s linear infinite;
 	-o-animation: ticker 12s linear infinite;
 	animation: ticker 12s linear infinite;
@@ -168,5 +168,5 @@ a {
 }
 @keyframes ticker {
 	0% { text-indent: 30em; }
-	100% { text-indent: -32em; }
+	100% { text-indent: -32em; }*/
 }
