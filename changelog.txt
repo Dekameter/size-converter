@@ -1,5 +1,5 @@
 <li>
-	v0.3 (December 10, 2014)
+	v0.3a (December 10, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Added in ticker functionality!</li>
@@ -10,7 +10,7 @@
 </li>
 
 <li>
-	v0.2.5 (December 9, 2014)
+	v0.2.5a (December 9, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Advanced Options for original energy output &amp; food intake.</li>
@@ -21,7 +21,7 @@
 </li>
 
 <li>
-	v0.2.4 (December 7, 2014)
+	v0.2.4a (December 7, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Twitter Feed</li>
@@ -34,7 +34,7 @@
 </li>
 
 <li>
-	v0.2.3 (November 30, 2014)
+	v0.2.3a (November 30, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add"></ul>
 	<ul class="sub"></ul>
@@ -45,7 +45,7 @@
 </li>
 
 <li>
-	v0.2.2 (November 26, 2014)
+	v0.2.2a (November 26, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Added a show/hide changelog toggle.</li>
@@ -59,7 +59,7 @@
 </li>
 
 <li>
-	v0.2.1 (November 24, 2014)
+	v0.2.1a (November 24, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add"></ul>
 	<ul class="sub"></ul>
@@ -70,7 +70,7 @@
 </li>
 
 <li>
-	v0.2 (November 24, 2014)
+	v0.2a (November 24, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Added in earthquake magnitude from footsteps.</li>
@@ -82,7 +82,7 @@
 </li>
 
 <li>
-	v0.1.2 (November 24, 2014)
+	v0.1.2a (November 24, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Added in the rest of the mass units to Daily Food Intake</li>
@@ -95,7 +95,7 @@
 </li>
 
 <li>
-	v0.1.1 (November 24, 2014)
+	v0.1.1a (November 24, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
 		<li>Added "Suns" unit to Energy Output</li>
@@ -111,7 +111,7 @@
 </li>
 
 <li>
-	v0.1 (November 24, 2014)
+	v0.1a (November 24, 2014)
 	<br />----------------------------------------------------
 	<ul class="add">
 		<li>Initial release</li>
