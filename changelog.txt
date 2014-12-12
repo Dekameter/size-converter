@@ -1,4 +1,16 @@
 <li>
+	v0.3.1a (December 11, 2014)
+	<br />-----------------------------------------------------
+	<ul class="add"></ul>
+	<ul class="sub"></ul>
+	<ul class="change">
+		<li>Made the whole ticker clickable.</li>
+		<li>Made the '13 lb' for bowling balls to more legible (removed spacing).</li>
+	</ul>
+	<br />
+</li>
+
+<li>
 	v0.3a (December 10, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
