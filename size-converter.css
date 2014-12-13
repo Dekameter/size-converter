@@ -20,6 +20,27 @@ a {
 	cursor: pointer;
 }
 
+form {
+	border-style: outset;
+}
+
+fieldset {
+	border: none;
+}
+
+form h3 {
+	display: inline;
+}
+
+form div {
+	border-style: inset;
+	padding: 1em;
+}
+
+label {
+	font-weight: bold;
+}
+
 .add {
 	list-style: none;
 	margin-left: 0;
