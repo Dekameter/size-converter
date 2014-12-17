@@ -53,7 +53,12 @@
 						value="true">
 					<label for="chkAdvOptions">Advanced Options</label>
 					<div id="advOptions">
-						<label class="align" for="txtOldEnergyOut">Original Energy Output:
+						<label class="align" for="txtOldVolume">Original Volume:
+						</label>
+						<input type="text" id="txtOldVolume" value="0.071"
+							size="10" />
+						<select id="selOldVolume"></select>
+						<br/><label class="align" for="txtOldEnergyOut">Original Energy Output:
 						</label>
 						<input type="text" id="txtOldEnergyOut" value="60"
 							size="10" />
@@ -76,6 +81,10 @@
 					<input type="text" id="txtNewWeight" value="195" size="10"
 						disabled />
 					<select id="selNewWeight"></select>
+					<br /><label class="align" for="txtNewVolume">New Volume:</label>
+					<input type="text" id="txtNewVolume" value="0.071" size="10"
+						disabled />
+					<select id="selNewVolume"></select>
 					
 					<br /><br /><div>
 					<p style="margin-top:0;">

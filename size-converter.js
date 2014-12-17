@@ -40,7 +40,7 @@ var volumeUnits = [
 	{name:"Cubic Millimeters",    value:"1e-9"},
 	{name:"Cubic Micrometers",    value:"1e-18"},
 	{name:"Cubic Nanometers",     value:"1e-27"},
-	{name:"Hydrogen Atom",        value:"7.23e-30"}
+	{name:"Hydrogen Atom",        value:"7.23e-30"},
 	{name:"Planck Volume",        value:"4.22419e-105"},
 
 	{name:"Observable Universes", value:"3.4e+80"},
@@ -234,6 +234,12 @@ function setFields()
 	oldHeightField = new field("txtOldHeight","selOldHeight",heightUnits,1);
 	newHeightField = new field("txtNewHeight","selNewHeight",heightUnits,1);
 
+	// Defaults to "Cubic Meters"
+	oldVolumeField = new field("txtOldVolume","selOldVolume",volumeUnits,
+		volumeUnits.map(function(e) { return e.name; }).indexOf("Cubic Meters"));
+	newVolumeField = new field("txtNewVolume","selNewVolume",volumeUnits,
+		volumeUnits.map(function(e) { return e.name; }).indexOf("Cubic Meters"));
+
 	// Defaults to "Pounds"
 	oldWeightField = new field("txtOldWeight","selOldWeight",weightUnits,3);
 	newWeightField = new field("txtNewWeight","selNewWeight",weightUnits,3);
@@ -251,6 +257,9 @@ function setEvents()
 {
 	$(oldHeightField.selector).change(function() { convertField(oldHeightField,this.value); });
 	$(oldWeightField.selector).change(function() { convertField(oldWeightField,this.value); });
+
+	$(newVolumeField.selector).change(function() { convertField(newVolumeField,this.value); });
+	$(newVolumeField.selector).change(function() { convertField(newVolumeField,this.value); });
 
 	$(newHeightField.selector).change(function() { convertField(newHeightField,this.value); });
 	$(newWeightField.selector).change(function() { convertField(newWeightField,this.value); });
@@ -279,14 +288,18 @@ function convert()
 	// increases their weight/mass by a factor of 8.
 	person.weight = cubicConvert(oldHeight,person.height,oldWeight);
 
+	var oldVolume = DEFAULT_PERSON.volume;
 	var oldEnergyOutput = DEFAULT_PERSON.energyOutput;
 	var oldFoodIntake = DEFAULT_PERSON.foodIntake;
 	if(document.getElementById("chkAdvOptions").checked)
 	{
+		oldVolume = oldVolumeField.textField.value * oldVolumeField.selector.value;
 		oldEnergyOutput = oldEnergyOutField.textField.value * oldEnergyOutField.selector.value;
 		oldFoodIntake = oldFoodIntakeField.textField.value * oldFoodIntakeField.selector.value;
 	}
 
+	person.volume = cubicConvert(DEFAULT_PERSON.height, person.height,
+		oldVolume)
 	person.energyOutput = cubicConvert(DEFAULT_PERSON.height, person.height,
 		oldEnergyOutput);
 	person.foodIntake = cubicConvert(DEFAULT_PERSON.height, person.height,
