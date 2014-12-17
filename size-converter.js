@@ -315,8 +315,17 @@ function convert()
 	// Returns a dimensionless number.
 	var momentMagnitude = ((2 / 3) * (Math.log(seismicMoment) / Math.LN10)) - 6;
 
-	newWeightField.selector.selectedIndex = newWeightField.selector.selectedIndex;
+	// Set all the displayed information.
+	newWeightField.selector.selectedIndex = oldWeightField.selector.selectedIndex;
 	newWeightField.textField.value = person.weight / newWeightField.selector.value;
+
+	if(document.getElementById("chkAdvOptions").checked)
+	{
+		newVolumeField.selector.selectedIndex = oldVolumeField.selector.selectedIndex;
+		energyOutField.selector.selectedIndex = oldEnergyOutField.selector.selectedIndex;
+		foodIntakeField.selector.selectedIndex = oldFoodIntakeField.selector.selectedIndex;
+	}
+	newVolumeField.textField.value = person.volume / newVolumeField.selector.value;
 
 	energyOutField.textField.value = person.energyOutput / energyOutField.selector.value;
 	var foodUnit = getFoodUnit(foodIntakeField.selector);
