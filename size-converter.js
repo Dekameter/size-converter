@@ -133,21 +133,21 @@ var powerUnits = [
 
 // Default units based on units above.
 var defaultPerson = {
-	height:"1.778",
-	weight:"88.3",
-	volume:"",
-	energyOutput:"60",
-	foodIntake:"8.368e+6",
+	height:"1.778", // In m
+	weight:"88.3", // In kg
+	volume:"0.0664", // In m^3
+	energyOutput:"60", // In Watts
+	foodIntake:"8.368e+6", // In Joules
 	foodStepForce:"932", // In Newtons
 	soleSurfaceArea:"",
-	walkHeight:"1.016e-1",
+	walkHeight:"1.016e-1", // In m
 	legWeightPercentage:"0.1" // Equivalent to 10%
 };
 
 var person = {
 	height:"1.778",
 	weight:"88.3",
-	volume:"",
+	volume:"0.0664",
 	energyOutput:"60",
 	foodIntake:"8.368e+6"
 };
@@ -155,7 +155,7 @@ var person = {
 var comparePerson = {
 	height:"1.778",
 	weight:"88.3",
-	volume:"",
+	volume:"0.0664",
 	energyOutput:"60",
 	foodIntake:"8.368e+6"
 }
