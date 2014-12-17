@@ -3,7 +3,7 @@
 
 // Human Height: Average 18-22 year old Adult American Male
 // Human Weight: Average 18-22 year old Adult American Male
-// Human Volume: http://www.wolframalpha.com/input/?i=volume+human+body
+// Human Volume: http://en.wikipedia.org/wiki/Orders_of_magnitude_%28volume%29
 
 var heightUnits = [
 	// All units in meters
@@ -25,6 +25,31 @@ var heightUnits = [
 	{name:"Earths",             value:"1.2742e+7"},
 	{name:"Moons",              value:"3.4742e+6"},
 	{name:"Humans",             value:"1.778e0"}
+];
+
+var volumeUnits = [
+	// All units in cubic meters
+	{name:"Cubic Miles",          value:"4.16818183e+9"},
+	{name:"Cubic Feet",           value:"2.83168e-2"},
+	{name:"Inches",               value:"1.63871e-5"},
+
+	{name:"Cubic Kilometers",     value:"1e+9"},
+	{name:"Cubic Meters",         value:"1"},
+	{name:"Liters",               value:"1e-3"},
+	{name:"Cubic Centimeters",    value:"1e-6"},
+	{name:"Cubic Millimeters",    value:"1e-9"},
+	{name:"Cubic Micrometers",    value:"1e-18"},
+	{name:"Cubic Nanometers",     value:"1e-27"},
+	{name:"Hydrogen Atom",        value:"7.23e-30"}
+	{name:"Planck Volume",        value:"4.22419e-105"},
+
+	{name:"Observable Universes", value:"3.4e+80"},
+	{name:"Milky Way Galaxies",   value:"3.3e+61"},
+	{name:"Solar Systems",        value:"1.402377772e+40"},
+	{name:"Suns",                 value:"1.41e+27"},
+	{name:"Earths",               value:"1.08321e+21"},
+	{name:"Moons",                value:"2.1958e+19"},
+	{name:"Humans",               value:"7.1e-2"}
 ];
 
 // Technically mass
@@ -139,7 +164,7 @@ var powerUnits = [
 var DEFAULT_PERSON = {
 	height:"1.778", // In m
 	weight:"88.3", // In kg
-	volume:"0.0664", // In m^3
+	volume:"7.1e-2", // In m^3
 	energyOutput:"60", // In Watts
 	foodIntake:"8.368e+6", // In Joules
 	foodStepForce:"932", // In Newtons
@@ -151,7 +176,7 @@ var DEFAULT_PERSON = {
 var person = {
 	height:"1.778",
 	weight:"88.3",
-	volume:"0.0664",
+	volume:"7.1e-2",
 	energyOutput:"60",
 	foodIntake:"8.368e+6"
 };
@@ -159,7 +184,7 @@ var person = {
 var comparePerson = {
 	height:"1.778",
 	weight:"88.3",
-	volume:"0.0664",
+	volume:"7.2e-2",
 	energyOutput:"60",
 	foodIntake:"8.368e+6"
 }
