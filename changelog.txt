@@ -1,12 +1,12 @@
 <li>
 	v0.3.2a (December 17, 2014)
 	<br />-----------------------------------------------------
-	<ul class="add"></ul>
-	<ul class="sub"></ul>
-	<ul class="change">
+	<ul class="add">
 		<li>Added better borders &amp; organization.</li>
 		<li>Added better textbox alignment.</li>
 	</ul>
+	<ul class="sub"></ul>
+	<ul class="change"></ul>
 	<br />
 </li>
 
