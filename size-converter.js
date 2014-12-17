@@ -34,17 +34,17 @@ var heightUnits = [
 
 var volumeUnits = [
 	// All units in cubic meters
-	{name:"Cubic Miles",          value:"4.16818183e+9"},
-	{name:"Cubic Feet",           value:"2.83168e-2"},
-	{name:"Inches",               value:"1.63871e-5"},
+	{name:"Cubic Miles",           value:"4.16818183e+9"},
+	{name:"Cubic Feet",            value:"2.83168e-2"},
+	{name:"Inches",                value:"1.63871e-5"},
 
-	{name:"Cubic Kilometers",     value:"1e+9"},
-	{name:"Cubic Meters",         value:"1"},
-	{name:"Liters",               value:"1e-3"},
-	{name:"Cubic Centimeters",    value:"1e-6"},
-	{name:"Cubic Millimeters",    value:"1e-9"},
-	{name:"Cubic Micrometers",    value:"1e-18"},
-	{name:"Cubic Nanometers",     value:"1e-27"},
+	{name:"Cubic Kilometers",      value:"1e+9"},
+	{name:"Cubic Meters",          value:"1"},
+	{name:"Liters",                value:"1e-3"},
+	{name:"Cubic Centimeters",     value:"1e-6"},
+	{name:"Cubic Millimeters",     value:"1e-9"},
+	{name:"Cubic Micrometers",     value:"1e-18"},
+	{name:"Cubic Nanometers",      value:"1e-27"},
 	{name:"Hydrogen Atoms",        value:"7.23e-30"},
 	{name:"Planck Volumes",        value:"4.22419e-105"},
 
