@@ -256,12 +256,11 @@ function setFields()
 function setEvents()
 {
 	$(oldHeightField.selector).change(function() { convertField(oldHeightField,this.value); });
+	$(oldVolumeField.selector).change(function() { convertField(oldVolumeField,this.value); });
 	$(oldWeightField.selector).change(function() { convertField(oldWeightField,this.value); });
-
-	$(newVolumeField.selector).change(function() { convertField(newVolumeField,this.value); });
-	$(newVolumeField.selector).change(function() { convertField(newVolumeField,this.value); });
-
+	
 	$(newHeightField.selector).change(function() { convertField(newHeightField,this.value); });
+	$(newVolumeField.selector).change(function() { convertField(newVolumeField,this.value); });
 	$(newWeightField.selector).change(function() { convertField(newWeightField,this.value); });
 
 	$(energyOutField.selector).change(function() { convertField(energyOutField,this.value); });
