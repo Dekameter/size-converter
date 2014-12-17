@@ -7,24 +7,29 @@
 
 var heightUnits = [
 	// All units in meters
-	{name:"Miles",              value:"1.60934e+3"},
-	{name:"Feet",               value:"3.048e-1"},
-	{name:"Inches",             value:"2.54e-2"},
+	{name:"Miles",                value:"1.60934e+3"},
+	{name:"Feet",                 value:"3.048e-1"},
+	{name:"Inches",               value:"2.54e-2"},
 
-	{name:"Kilometers",         value:"1e+3"},
-	{name:"Meters",             value:"1"},
-	{name:"Centimeters",        value:"1e-2"},
-	{name:"Millimeters",        value:"1e-3"},
-	{name:"Micrometers",        value:"1e-6"},
-	{name:"Nanometers",         value:"1e-9"},
+	{name:"Kilometers",           value:"1e+3"},
+	{name:"Meters",               value:"1"},
+	{name:"Centimeters",          value:"1e-2"},
+	{name:"Millimeters",          value:"1e-3"},
+	{name:"Micrometers",          value:"1e-6"},
+	{name:"Nanometers",           value:"1e-9"},
+	{name:"Hydrogen Atoms",       value:"5.3e-11"},
+	{name:"Planck Lengths",       value:"1.616199e-35"},
 
-	{name:"Parsecs",            value:"3.085677581491367e+16"},
-	{name:"Light Years",        value:"9.4607304725808e+15"},
-	{name:"Astronomical Units", value:"1.49597807e+11"},
-	{name:"Suns",               value:"1.392684e+9"},
-	{name:"Earths",             value:"1.2742e+7"},
-	{name:"Moons",              value:"3.4742e+6"},
-	{name:"Humans",             value:"1.778e0"}
+	{name:"Observable Universes", value:"8.639897228e+26"},
+	{name:"Milky Way Galaxies",   value:"9.460730473e+19"},
+	{name:"Solar Systems",        value:"7.47989035e+12"},
+	{name:"Parsecs",              value:"3.085677581491367e+16"},
+	{name:"Light Years",          value:"9.4607304725808e+15"},
+	{name:"Astronomical Units",   value:"1.49597807e+11"},
+	{name:"Suns",                 value:"1.392684e+9"},
+	{name:"Earths",               value:"1.2742e+7"},
+	{name:"Moons",                value:"3.4742e+6"},
+	{name:"Humans",               value:"1.778e0"}
 ];
 
 var volumeUnits = [
@@ -40,8 +45,8 @@ var volumeUnits = [
 	{name:"Cubic Millimeters",    value:"1e-9"},
 	{name:"Cubic Micrometers",    value:"1e-18"},
 	{name:"Cubic Nanometers",     value:"1e-27"},
-	{name:"Hydrogen Atom",        value:"7.23e-30"},
-	{name:"Planck Volume",        value:"4.22419e-105"},
+	{name:"Hydrogen Atoms",        value:"7.23e-30"},
+	{name:"Planck Volumes",        value:"4.22419e-105"},
 
 	{name:"Observable Universes", value:"3.4e+80"},
 	{name:"Milky Way Galaxies",   value:"3.3e+61"},
@@ -55,26 +60,32 @@ var volumeUnits = [
 // Technically mass
 var weightUnits = [
 	// All units in kilograms
-	{name:"Tons (Long)",         value:"1.01605e+3"},
-	{name:"Tons (Short)",        value:"9.07185e+2"},
-	{name:"Stones",              value:"6.35029e0"},
-	{name:"Pounds",              value:"4.53592e-1"},
-	{name:"Ounces",              value:"2.834952313e-2"},
+	{name:"Tons (Long)",          value:"1.01605e+3"},
+	{name:"Tons (Short)",         value:"9.07185e+2"},
+	{name:"Stones",               value:"6.35029e0"},
+	{name:"Pounds",               value:"4.53592e-1"},
+	{name:"Ounces",               value:"2.834952313e-2"},
 
-	{name:"Tonnes (Metric)",     value:"1e+3"},
-	{name:"Kilograms",           value:"1"},
-	{name:"Grams",               value:"1e-3"},
-	{name:"Milligrams",          value:"1e-6"},
-	{name:"Micrograms",          value:"1e-9"},
-	{name:"Nanograms",           value:"1e-12"},
+	{name:"Tonnes (Metric)",      value:"1e+3"},
+	{name:"Kilograms",            value:"1"},
+	{name:"Grams",                value:"1e-3"},
+	{name:"Milligrams",           value:"1e-6"},
+	{name:"Micrograms",           value:"1e-9"},
+	{name:"Nanograms",            value:"1e-12"},
 
-	{name:"Atomic mass units",   value:"1.660538921e-27"},
-	{name:"Electronvolts",       value:"1.782662e-36"},
+	{name:"Atomic mass units",    value:"1.660538921e-27"},
+	{name:"Electronvolts",        value:"1.782662e-36"},
 
-	{name:"Solar masses (Suns)", value:"1.98855e+30"},
-	{name:"Earths",              value:"5.97219e+24"},
-	{name:"Moons",               value:"7.3477e+22"},
-	{name:"Humans",              value:"8.83e+1"}
+	// Based on steady-state calculaions by Fred Hoyle. Assumes matter (ordinary,
+	// neutrinos, dark matter) at 31.7% of total mass/energy (2.48e+54 kg)
+	{name:"Observable Universes", value:"1.45e+53"},
+	// Average between 0.8 - 1.5 * 10^12 Solar Masses , including Dark Matter
+	{name:"Milky Way Galaxies",   value:"2.2868325e+42"},
+	{name:"Solar Systems",        value:"1.99133397e+30"},
+	{name:"Solar masses (Suns)",  value:"1.98855e+30"},
+	{name:"Earths",               value:"5.97219e+24"},
+	{name:"Moons",                value:"7.3477e+22"},
+	{name:"Humans",               value:"8.83e+1"}
 ];
 
 var energyUnits = [
@@ -125,6 +136,13 @@ var energyUnits = [
 	{name:"Atomic mass units",              value:"1.49241795e-10"},
 	{name:"Electronvolts",                  value:"1.60217656e-19"},
 
+	// Based on steady-state calculaions by Fred Hoyle.
+	// Assumes total mass/energy of the observable universe (e.g. ordinary, neutrinos,
+	// dark matter, dark energy) @ 2.48e+54 kg
+	{name:"Observable Universes",           value:"2.228912843e+71"},
+	// Average between 0.8 - 1.5 * 10^12 Solar Masses , including Dark Matter
+	{name:"Milky Way Galaxies",             value:"2.055302552e+59"},
+	{name:"Solar Systems",                  value:"1.789721718e+47"},
 	{name:"Solar masses (Suns)",            value:"1.787219611e+47"},
 	{name:"Earths",                         value:"4.468781512e+41"},
 	{name:"Moons",                          value:"6.603783427e+39"},
@@ -184,7 +202,7 @@ var person = {
 var comparePerson = {
 	height:"1.778",
 	weight:"88.3",
-	volume:"7.2e-2",
+	volume:"7.1e-2",
 	energyOutput:"60",
 	foodIntake:"8.368e+6"
 }
