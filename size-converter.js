@@ -136,7 +136,7 @@ var powerUnits = [
 ];
 
 // Default units based on units above.
-var defaultPerson = {
+var DEFAULT_PERSON = {
 	height:"1.778", // In m
 	weight:"88.3", // In kg
 	volume:"0.0664", // In m^3
@@ -254,23 +254,23 @@ function convert()
 	// increases their weight/mass by a factor of 8.
 	person.weight = cubicConvert(oldHeight,person.height,oldWeight);
 
-	var oldEnergyOutput = defaultPerson.energyOutput;
-	var oldFoodIntake = defaultPerson.foodIntake;
+	var oldEnergyOutput = DEFAULT_PERSON.energyOutput;
+	var oldFoodIntake = DEFAULT_PERSON.foodIntake;
 	if(document.getElementById("chkAdvOptions").checked)
 	{
 		oldEnergyOutput = oldEnergyOutField.textField.value * oldEnergyOutField.selector.value;
 		oldFoodIntake = oldFoodIntakeField.textField.value * oldFoodIntakeField.selector.value;
 	}
 
-	person.energyOutput = cubicConvert(defaultPerson.height, person.height,
+	person.energyOutput = cubicConvert(DEFAULT_PERSON.height, person.height,
 		oldEnergyOutput);
-	person.foodIntake = cubicConvert(defaultPerson.height, person.height,
+	person.foodIntake = cubicConvert(DEFAULT_PERSON.height, person.height,
 		oldFoodIntake);
 	
 	// Basing this on gravitational potential energy, where a lifted foot when walking has potential energy.
-	var footHeight = linearConvert(oldHeight,person.height,defaultPerson.walkHeight);
-	//var footMass = cubicConvert(oldHeight,person.height,defaultPerson.footWeight);
-	var legMass = person.weight * defaultPerson.legWeightPercentage;
+	var footHeight = linearConvert(oldHeight,person.height,DEFAULT_PERSON.walkHeight);
+	//var footMass = cubicConvert(oldHeight,person.height,DEFAULT_PERSON.footWeight);
+	var legMass = person.weight * DEFAULT_PERSON.legWeightPercentage;
 	var footStepEnergy = legMass * footHeight * 9.80665;
 	// Based on these equations http://www.ajdesigner.com/phpseismograph/earthquake_seismometer_equation_energy_moment.php
 	var seismicMoment = 20000 * footStepEnergy;
