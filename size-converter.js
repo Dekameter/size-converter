@@ -1,6 +1,10 @@
 // Copyright (c) 2014 DekaShichi
 // Size Converter v0.3
 
+// Human Height: Average 18-22 year old Adult American Male
+// Human Weight: Average 18-22 year old Adult American Male
+// Human Volume: http://www.wolframalpha.com/input/?i=volume+human+body
+
 var heightUnits = [
 	// All units in meters
 	{name:"Miles",              value:"1.60934e+3"},
