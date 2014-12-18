@@ -8,6 +8,7 @@
 		<li>Added Solar Systems as other units.</li>
 		<li>Added Planck length unit.</li>
 		<li>Added Hydrogen atoms as length &amp; mass units.</li>
+		<li>Added yard and cubic yard units.</li>
 	</ul>
 	<ul class="sub"></ul>
 	<ul class="change">
