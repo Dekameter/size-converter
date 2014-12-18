@@ -28,7 +28,7 @@ var lengthItems = [
 	// Defined based on the Kuiper Belt
 	{name:"Solar System", plural:"Solar Systems",               value:"7.47989035e+12"},
 	{name:"Milky Way Galaxy", plural:"Milky Way Galaxies",      value:"9.460730473e+19"},
-	{name:"observable universe", plural:"observable universes", value:"3.4e+80"}
+	{name:"observable universe", plural:"observable universes", value:"8.639897228e+26"}
 ];
 
 function getNextTicker(person) {
