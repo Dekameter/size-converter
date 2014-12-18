@@ -36,7 +36,7 @@ var heightUnits = [
 var volumeUnits = [
 	// All units in cubic meters
 	{name:"Cubic Miles",           value:"4.16818183e+9"},
-	{name:"Cubic Yards",           value:"7.6455e-1"}
+	{name:"Cubic Yards",           value:"7.6455e-1"},
 	{name:"Cubic Feet",            value:"2.83168e-2"},
 	{name:"Inches",                value:"1.63871e-5"},
 
