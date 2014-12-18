@@ -1,4 +1,23 @@
 <li>
+	v0.3.3a (December 17, 2014)
+	<br />-----------------------------------------------------
+	<ul class="add">
+		<li>Added volume options.</li>
+		<li>Added observable universe units and ticker.</li>
+		<li>Added Milky Way galaxies as other units.</li>
+		<li>Added Solar Systems as other units.</li>
+		<li>Added Planck length unit.</li>
+		<li>Added Hydrogen atoms as length &amp; mass units.</li>
+	</ul>
+	<ul class="sub"></ul>
+	<ul class="change">
+		<li>Fixed new units meant to switch to the same as the old units on convert.</li>
+		<li>Fixed advanced options aligning.</li>
+	</ul>
+	<br />
+</li>
+
+<li>
 	v0.3.2a (December 17, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
