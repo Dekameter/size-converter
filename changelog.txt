@@ -1,4 +1,17 @@
 <li>
+	Hotfix v0.3.4a (December 17, 2014)
+	<br />-----------------------------------------------------
+	<ul class="add"></ul>
+	<ul class="sub"></ul>
+	<ul class="change">
+		<li>Fixed broken converter.</li>
+		<li>Fixed broken ticker.</li>
+		<li>Fixed "observable universe" in ticker using wrong value.</li>
+	</ul>
+	<br />
+</li>
+
+<li>
 	v0.3.3a (December 17, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add">
