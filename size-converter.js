@@ -269,11 +269,15 @@ function setFields()
 		weightUnits.map(function(e) { return e.name; }).indexOf("Pounds"));
 
 	// Defaults to "Watts"
-	oldEnergyOutField = new field("txtOldEnergyOut","selOldEnergyOut",powerUnits,4);
-	energyOutField = new field("txtEnergyOut","selEnergyOut",powerUnits,4);
+	oldEnergyOutField = new field("txtOldEnergyOut","selOldEnergyOut",powerUnits,
+		powerUnits.map(function(e) { return e.name; }).indexOf("Watts"));
+	energyOutField = new field("txtEnergyOut","selEnergyOut",powerUnits,
+		powerUnits.map(function(e) { return e.name; }).indexOf("Watts"));
 	// Defaults to "Food (Kilo)Calories"
-	oldFoodIntakeField = new field("txtOldFoodIntake","selOldFoodIntake",energyUnits,15);
-	foodIntakeField = new field("txtFoodIntake","selFoodIntake",energyUnits,15);
+	oldFoodIntakeField = new field("txtOldFoodIntake","selOldFoodIntake",energyUnits,
+		energyUnits.map(function(e) { return e.name; }).indexOf("Food (Kilo)calories"));
+	foodIntakeField = new field("txtFoodIntake","selFoodIntake",energyUnits,
+		energyUnits.map(function(e) { return e.name; }).indexOf("Food (Kilo)calories"));
 	//footStepMagField = new field("txtMomentMag",null,null,null);
 }
 
