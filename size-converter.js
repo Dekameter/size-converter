@@ -251,8 +251,10 @@ function field(textFieldId, selectorId, units, defaultIndex)
 function setFields()
 {
 	// Defaults to "Feet"
-	oldHeightField = new field("txtOldHeight","selOldHeight",heightUnits,1);
-	newHeightField = new field("txtNewHeight","selNewHeight",heightUnits,1);
+	oldHeightField = new field("txtOldHeight","selOldHeight",heightUnits,
+		heightUnits.map(function(e) { return e.name; }).indexOf("Feet"));
+	newHeightField = new field("txtNewHeight","selNewHeight",heightUnits,
+		heightUnits.map(function(e) { return e.name; }).indexOf("Feet"));
 
 	// Defaults to "Cubic Meters"
 	oldVolumeField = new field("txtOldVolume","selOldVolume",volumeUnits,
@@ -261,8 +263,10 @@ function setFields()
 		volumeUnits.map(function(e) { return e.name; }).indexOf("Cubic Meters"));
 
 	// Defaults to "Pounds"
-	oldWeightField = new field("txtOldWeight","selOldWeight",weightUnits,3);
-	newWeightField = new field("txtNewWeight","selNewWeight",weightUnits,3);
+	oldWeightField = new field("txtOldWeight","selOldWeight",weightUnits,
+		weightUnits.map(function(e) { return e.name; }).indexOf("Pounds"));
+	newWeightField = new field("txtNewWeight","selNewWeight",weightUnits,
+		weightUnits.map(function(e) { return e.name; }).indexOf("Pounds"));
 
 	// Defaults to "Watts"
 	oldEnergyOutField = new field("txtOldEnergyOut","selOldEnergyOut",powerUnits,4);
