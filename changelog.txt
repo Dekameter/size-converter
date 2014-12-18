@@ -1,4 +1,15 @@
 <li>
+	Hotfix v0.3.5a (December 17, 2014)
+	<br />-----------------------------------------------------
+	<ul class="add"></ul>
+	<ul class="sub"></ul>
+	<ul class="change">
+		<li>Fixed default units for lengths back to 'feet'.</li>
+	</ul>
+	<br />
+</li>
+
+<li>
 	Hotfix v0.3.4a (December 17, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add"></ul>
