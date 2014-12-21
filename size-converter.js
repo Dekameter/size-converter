@@ -190,7 +190,26 @@ var DEFAULT_PERSON = {
 	foodStepForce:"932", // In Newtons
 	soleSurfaceArea:"",
 	walkHeight:"1.016e-1", // In m
-	legWeightPercentage:"0.1" // Equivalent to 10%
+	legWeightPercentage:"0.1", // Equivalent to 10%
+
+	// Proportions (0.0 - 1.0)
+	// Source: http://hpc.anatomy4sculptors.com/
+	chinHeightProp:"0.875",
+	shoulderHeightProp:"0.825",
+	chestHeightProp:"0.7375",
+	waistHeightProp:"0.625",
+	crotchHeightProp:"0.5",
+	kneeHeightProp:"0.25",
+
+	headSizeProp:"0.125",
+	armLengthProp:"0.4375",
+	bicepLengthProp:"0.2125",
+	tricepLengthProp:"0.125",
+	handLengthProp:"0.1",
+	handWidthProp:"0.05",
+	fingerLengthProp:"0.05625",
+	thumbLengthPRop:"0.03125",
+	legLengthProp:"0.5"
 };
 
 var person = {
