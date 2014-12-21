@@ -17,3 +17,4 @@ Width: 1.8542 m (73.0")
 Height: 1.49606 m (58.9")
 Projected Volume: 7.091744555... m^3
 Passenger Volume: 2.973268892 m^3 (105 ft^3)
+Curb weight: 3800lb-3950lb = ~3875lb (1757.670434 kg)

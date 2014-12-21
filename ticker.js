@@ -72,6 +72,39 @@ var volumeItems = [
 	{name:"observable universe", plural:"observable universes", value:"3.4e+80"}
 ];
 
+// All units in kilograms
+var massItems = [
+	{name:"hydrogen atom", plural:"hydrogen atoms",             value:"1.6737236e-27"},
+	{name:"13lb bowling ball", plural:"13lb bowling balls",     value:"5.89670081e0"},
+	{name:"human", plural:"humans",                             value:"8.83e1"},
+	{name:"midsize car", plural:"midsize cars",                 value:"1.757670434e+3"},
+	{name:"Eiffel Tower", plural:"Eiffel Towers",               value:"7.3e+6"},
+	// Based on 500,000 short (US) tons from (assuming short, not specified, based on author):
+	// http://blogs.discovermagazine.com/80beats/2010/01/04/10-things-you-didnt-know-about-the-burj-khalifa-the-new-tallest-building-in-the-world/
+	{name:"Burj Khalifa", plural:"Burj Khalifas",               value:"4.5359237e+8"},
+	// Using the volume above times the density of granite (2.65 to 2.75 g/cm^3
+	// or ~2.7 g/cm^3 = 2700 kg/m^3
+	{name:"Mount Everest", plural:"Mount Everests",             value:"6.404385438e+15"},
+	{name:"Olympus Mons", plural:"Olympus Monses",              value:"2.1229e+4"},
+	{name:"Moon", plural:"Moons",                               value:"3.4742e+6"},
+	{name:"Mercury", plural:"Mercuries",                        value:"4.8794e+6"},
+	{name:"Mars", plural:"Marses",                              value:"6.779e+6"},
+	{name:"Venus", plural:"Venuses",                            value:"1.21036e+7"},
+	{name:"Earth", plural:"Earths",                             value:"1.2742e+7"},
+	{name:"Neptune", plural:"Neptunes",                         value:"4.9244e+7"},
+	{name:"Uranus", plural:"Uranuses",                          value:"5.0724e+7"},
+	{name:"Saturn", plural:"Saturns",                           value:"1.16464e+8"},
+	{name:"Jupiter", plural:"Jupiters",                         value:"1.39822e+8"},
+	{name:"Sun", plural:"Suns",                                 value:"1.392684e+9"},
+	{name:"Betelgeuse", plural:"Betelgeuses",                   value:"1.4971353e+12"},
+	{name:"VY Canis Majoris", plural:"VY Canis Majorises",      value:"1.97761128e+12"},
+	// Defined based on the Kuiper Belt
+	{name:"Solar System", plural:"Solar Systems",               value:"7.47989035e+12"},
+	{name:"Eagle Nebula", plural:"Eagle Nebulae",               value:"3.784292189e+17"},
+	{name:"Milky Way Galaxy", plural:"Milky Way Galaxies",      value:"9.460730473e+20"},
+	{name:"observable universe", plural:"observable universes", value:"8.639897228e+26"}
+];
+
 function getNextTicker(person) {
 	var tickerText = "Your character is as ";
 	var DEFAULT_TEXT = tickerText;
