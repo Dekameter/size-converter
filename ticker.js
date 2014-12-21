@@ -22,8 +22,14 @@ var lengthItems = [
 	{name:"Olympus Mons", plural:"Olympus Monses",              value:"2.1229e+4"},
 	// Celestial bodies based on mean diameter
 	{name:"Moon", plural:"Moons",                               value:"3.4742e+6"},
+	{name:"Mercury", plural:"Mercuries",                        value:"4.8794e+6"},
+	{name:"Mars", plural:"Marses",                              value:"6.779e+6"},
+	{name:"Venus", plural:"Venuses",                            value:"1.21036e+7"},
 	{name:"Earth", plural:"Earths",                             value:"1.2742e+7"},
+	{name:"Neptune", plural:"Neptunes",                         value:"4.9244e+7"},
+	{name:"Uranus", plural:"Uranuses",                          value:"5.0724e+7"},
 	{name:"Saturn", plural:"Saturns",                           value:"1.16464e+8"},
+	{name:"Jupiter", plural:"Jupiters",                         value:"1.39822e+8"},
 	{name:"Sun", plural:"Suns",                                 value:"1.392684e+9"},
 	// Defined based on the Kuiper Belt
 	{name:"Solar System", plural:"Solar Systems",               value:"7.47989035e+12"},
