@@ -10,3 +10,10 @@ Average energy output (Work): 75 W
 
 Average daily calorie intake: 2000 kcal
 Average daily calorie intake (Work): 2600 kcal
+
+2014 Chevrolet Impala:
+Length: 5.11302 m (201.3")
+Width: 1.8542 m (73.0")
+Height: 1.49606 m (58.9")
+Projected Volume: 7.091744555... m^3
+Passenger Volume: 2.973268892 m^3 (105 ft^3)
