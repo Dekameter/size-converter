@@ -31,8 +31,11 @@ var lengthItems = [
 	{name:"Saturn", plural:"Saturns",                           value:"1.16464e+8"},
 	{name:"Jupiter", plural:"Jupiters",                         value:"1.39822e+8"},
 	{name:"Sun", plural:"Suns",                                 value:"1.392684e+9"},
+	{name:"Betelgeuse", plural:"Betelgeuses",                   value:"1.4971353e+12"},
+	{name:"VY Canis Majoris", plural:"VY Canis Majorises",      value:"1.97761128e+12"},
 	// Defined based on the Kuiper Belt
 	{name:"Solar System", plural:"Solar Systems",               value:"7.47989035e+12"},
+	{name:"Eagle Nebula", plural:"Eagle Nebulae",               value:"3.784292189e+17"},
 	{name:"Milky Way Galaxy", plural:"Milky Way Galaxies",      value:"9.460730473e+19"},
 	{name:"observable universe", plural:"observable universes", value:"8.639897228e+26"}
 ];
