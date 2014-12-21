@@ -22,7 +22,7 @@ var heightUnits = [
 	{name:"Planck Lengths",       value:"1.616199e-35"},
 
 	{name:"Observable Universes", value:"8.639897228e+26"},
-	{name:"Milky Way Galaxies",   value:"9.460730473e+19"},
+	{name:"Milky Way Galaxies",   value:"9.460730473e+20"},
 	{name:"Solar Systems",        value:"7.47989035e+12"},
 	{name:"Parsecs",              value:"3.085677581491367e+16"},
 	{name:"Light Years",          value:"9.4607304725808e+15"},
