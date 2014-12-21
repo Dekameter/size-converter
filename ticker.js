@@ -54,6 +54,9 @@ var volumeItems = [
 	{name:"midsize car", plural:"midsize cars",                 value:"7.091744555e0"},
 	// Calculated based on lwh/3, where the base is 125 m * 125 m, and h = 324 m
 	{name:"Eiffel Tower", plural:"Eiffel Towers",               value:"1.6875e+6"},
+	// Assuming Everest is a perfect cone, with a base of 16 km and using the
+	// height above.
+	{name:"Mount Everest", plural:"Mount Everests",             value:"2.3719946-7e+12"},
 	{name:"Moon", plural:"Moons",                               value:"2.1958e+19"},
 	{name:"Mercury", plural:"Mercuries",                        value:"6.083e+19"},
 	{name:"Mars", plural:"Marses",                              value:"1.6318e+20"},
