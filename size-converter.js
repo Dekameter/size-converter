@@ -343,14 +343,14 @@ function convert()
 	var momentMagnitude = ((2 / 3) * (Math.log(seismicMoment) / Math.LN10)) - 6;
 
 	// Set all the displayed information.
-	newWeightField.selector.selectedIndex = oldWeightField.selector.selectedIndex;
+	matchUnits(oldWeightField,newWeightField);
 	newWeightField.textField.value = person.weight / newWeightField.selector.value;
 
 	if(document.getElementById("chkAdvOptions").checked)
 	{
-		newVolumeField.selector.selectedIndex = oldVolumeField.selector.selectedIndex;
-		energyOutField.selector.selectedIndex = oldEnergyOutField.selector.selectedIndex;
-		foodIntakeField.selector.selectedIndex = oldFoodIntakeField.selector.selectedIndex;
+		matchUnits(oldVolumeField,newVolumeField);
+		matchUnits(oldEnergyOutField,energyOutField);
+		matchUnits(oldFoodIntakeField,foodIntakeField);
 	}
 	newVolumeField.textField.value = person.volume / newVolumeField.selector.value;
 
@@ -377,6 +377,12 @@ function quadraticConvert(oldHeight, newHeight, oldValue)
 function cubicConvert(oldHeight, newHeight, oldValue)
 {
 	return oldValue * Math.pow(newHeight / oldHeight,3);
+}
+
+function matchUnits(oldField, newField)
+{
+	newField.selector.selectedIndex = oldField.selector.selectedIndex;
+	newField.prevUnit = newField.selector.value;
 }
 
 function convertUnit(oldUnit, newUnit)
