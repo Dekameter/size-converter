@@ -70,7 +70,7 @@ var volumeItems = [
 	{name:"Solar System", plural:"Solar Systems",               value:"1.402377772e+40"},
 	{name:"Milky Way Galaxy", plural:"Milky Way Galaxies",      value:"3.3e+61"},
 	{name:"observable universe", plural:"observable universes", value:"3.4e+80"}
-]
+];
 
 function getNextTicker(person) {
 	var tickerText = "Your character is as ";
