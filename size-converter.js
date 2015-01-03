@@ -269,7 +269,7 @@ function field(textFieldId, selectorId, units, defaultIndex)
 
 function setFields()
 {
-	// Defaults to "Feet"
+	// Defaults to "Meters"
 	oldHeightField = new field("txtOldHeight","selOldHeight",heightUnits,
 		heightUnits.map(function(e) { return e.name; }).indexOf("Meters"));
 	newHeightField = new field("txtNewHeight","selNewHeight",heightUnits,
@@ -281,7 +281,7 @@ function setFields()
 	newVolumeField = new field("txtNewVolume","selNewVolume",volumeUnits,
 		volumeUnits.map(function(e) { return e.name; }).indexOf("Cubic Meters"));
 
-	// Defaults to "Pounds"
+	// Defaults to "Kilograms"
 	oldWeightField = new field("txtOldWeight","selOldWeight",weightUnits,
 		weightUnits.map(function(e) { return e.name; }).indexOf("Kilograms"));
 	newWeightField = new field("txtNewWeight","selNewWeight",weightUnits,
