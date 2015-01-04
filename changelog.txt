@@ -1,4 +1,23 @@
 <li>
+	Hotfix v0.4a (January 3, 2015)
+	<br />-----------------------------------------------------
+	<ul class="add">
+		<li>Added "key points" section.</li>
+		<li>Added volume to ticker.</li>
+		<li>Added mass to ticker.</li>
+		<li>Added the rest of the planets to the ticker.</li>
+		<li>Added the celestial bodies Betelgeuse, VY Canis Majoris, and Eagle Nebula to ticler.</li>
+		<li>Added a standard mid-size car (based on the 2014 Chevrolet Impala) to ticker.</li>
+	</ul>
+	<ul class="sub"></ul>
+	<ul class="change">
+		<li>All default units were switched to the SI / MKS standards for consistency.</li>
+		<li>Fixed the Milky Way Galaxy's length in ticker and converter from 9.46...e+19 m to 9.46...e+20 m.</li>
+	</ul>
+	<br />
+</li>
+
+<li>
 	Hotfix v0.3.5a (December 17, 2014)
 	<br />-----------------------------------------------------
 	<ul class="add"></ul>
