@@ -275,6 +275,29 @@ function setFields()
 	newHeightField = new field("txtNewHeight","selNewHeight",heightUnits,
 		heightUnits.map(function(e) { return e.name; }).indexOf("Meters"));
 
+	chinHeightField = new field("txtChinHeight","selChinHeight",heightUnits,
+		heightUnits.map(function(e) { return e.name; }).indexOf("Meters"));
+	shoHeightField = new field("txtShoHeight","selShoHeight",heightUnits,
+		heightUnits.map(function(e) { return e.name; }).indexOf("Meters"));
+	chestHeightField = new field("txtChestHeight","selChestHeight",heightUnits,
+		heightUnits.map(function(e) { return e.name; }).indexOf("Meters"));
+	waistHeightField = new field("txtWaistHeight","selWaistHeight",heightUnits,
+		heightUnits.map(function(e) { return e.name; }).indexOf("Meters"));
+	crotchHeightField = new field("txtCrotchHeight","selCrotchHeight",heightUnits,
+		heightUnits.map(function(e) { return e.name; }).indexOf("Meters"));
+	kneeHeightField = new field("txtKneeHeight","selKneeHeight",heightUnits,
+		heightUnits.map(function(e) { return e.name; }).indexOf("Meters"));
+
+	/*headSizeProp:"0.125",
+	armLengthProp:"0.4375",
+	bicepLengthProp:"0.2125",
+	tricepLengthProp:"0.125",
+	handLengthProp:"0.1",
+	handWidthProp:"0.05",
+	fingerLengthProp:"0.05625",
+	thumbLengthProp:"0.03125",
+	legLengthProp:"0.5"*/
+
 	// Defaults to "Cubic Meters"
 	oldVolumeField = new field("txtOldVolume","selOldVolume",volumeUnits,
 		volumeUnits.map(function(e) { return e.name; }).indexOf("Cubic Meters"));
@@ -309,6 +332,13 @@ function setEvents()
 	$(newHeightField.selector).change(function() { convertField(newHeightField,this.value); });
 	$(newVolumeField.selector).change(function() { convertField(newVolumeField,this.value); });
 	$(newWeightField.selector).change(function() { convertField(newWeightField,this.value); });
+
+	$(chinHeightField.selector).change(function() { convertField(chinHeightField,this.value); });
+	$(shoHeightField.selector).change(function() { convertField(shoHeightField,this.value); });
+	$(chestHeightField.selector).change(function() { convertField(chestHeightField,this.value); });
+	$(waistHeightField.selector).change(function() { convertField(waistHeightField,this.value); });
+	$(crotchHeightField.selector).change(function() { convertField(crotchHeightField,this.value); });
+	$(kneeHeightField.selector).change(function() { convertField(kneeHeightField,this.value); });
 
 	$(energyOutField.selector).change(function() { convertField(energyOutField,this.value); });
 	$(foodIntakeField.selector).change(function() {
@@ -361,6 +391,14 @@ function convert()
 	// Returns a dimensionless number.
 	var momentMagnitude = ((2 / 3) * (Math.log(seismicMoment) / Math.LN10)) - 6;
 
+	// Convert key points
+	person.chinHeight = DEFAULT_PERSON.chinHeightProp * person.height;
+	person.shoulderHeight = DEFAULT_PERSON.shoulderHeightProp * person.height;
+	person.chestHeight = DEFAULT_PERSON.chestHeightProp * person.height;
+	person.waistHeight = DEFAULT_PERSON.waistHeightProp * person.height;
+	person.crotchHeight = DEFAULT_PERSON.crotchHeightProp * person.height;
+	person.kneeHeight = DEFAULT_PERSON.kneeHeightProp * person.height;
+
 	// Set all the displayed information.
 	matchUnits(oldWeightField,newWeightField);
 	newWeightField.textField.value = person.weight / newWeightField.selector.value;
@@ -372,6 +410,14 @@ function convert()
 		matchUnits(oldFoodIntakeField,foodIntakeField);
 	}
 	newVolumeField.textField.value = person.volume / newVolumeField.selector.value;
+
+	// Set key points
+	chinHeightField.textField.value = person.chinHeight / chinHeightField.selector.value;
+	shoHeightField.textField.value = person.shoulderHeight / shoHeightField.selector.value;
+	chestHeightField.textField.value = person.chestHeight / chestHeightField.selector.value;
+	waistHeightField.textField.value = person.waistHeight / waistHeightField.selector.value;
+	crotchHeightField.textField.value = person.crotchHeight / crotchHeightField.selector.value;
+	kneeHeightField.textField.value = person.kneeHeight / kneeHeightField.selector.value;
 
 	energyOutField.textField.value = person.energyOutput / energyOutField.selector.value;
 	var foodUnit = getFoodUnit(foodIntakeField.selector);
