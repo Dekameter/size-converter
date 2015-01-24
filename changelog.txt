@@ -1,4 +1,17 @@
 <li>
+	v0.4.1a (January 24, 2015)
+	<br />-----------------------------------------------------
+	<ul class="add">
+		<li>Added "Stories" (10 ft) as a unit.</li>
+	</ul>
+	<ul class="sub"></ul>
+	<ul class="change">
+		<li>Fixed a typo for "Cubic Inches"</li>
+	</ul>
+	<br />
+</li>
+
+<li>
 	v0.4a (January 3, 2015)
 	<br />-----------------------------------------------------
 	<ul class="add">
